@@ -82,11 +82,9 @@ class _ItemGridViewState extends State<ItemGridView> {
                     // title: const Text('Select Target'),
                     children: [
                       SimpleDialogOption(
-                        onPressed: () async {
-                          await logic.setWallpaper(item, LudiaTarget.home);
-                          if (mounted) {
-                            Navigator.of(context).pop();
-                          }
+                        onPressed: () {
+                          logic.setWallpaper(item, LudiaTarget.home);
+                          Navigator.of(context).pop();
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -98,11 +96,9 @@ class _ItemGridViewState extends State<ItemGridView> {
                         ),
                       ),
                       SimpleDialogOption(
-                        onPressed: () async {
-                          await logic.setWallpaper(item, LudiaTarget.lock);
-                          if (mounted) {
-                            Navigator.of(context).pop();
-                          }
+                        onPressed: () {
+                          logic.setWallpaper(item, LudiaTarget.lock);
+                          Navigator.of(context).pop();
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -114,11 +110,9 @@ class _ItemGridViewState extends State<ItemGridView> {
                         ),
                       ),
                       SimpleDialogOption(
-                        onPressed: () async {
-                          await logic.setWallpaper(item, LudiaTarget.both);
-                          if (mounted) {
-                            Navigator.of(context).pop();
-                          }
+                        onPressed: () {
+                          logic.setWallpaper(item, LudiaTarget.both);
+                          Navigator.of(context).pop();
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,

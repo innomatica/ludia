@@ -30,11 +30,13 @@ class LudiaLogic extends ChangeNotifier {
 
   final _items = <LudiaItem>[];
   final _db = SqliteService();
+  bool _busy = false;
   int _gridColumns = 2;
   late final Directory _dir;
 
   List<LudiaItem> get items => _items;
   int get gridColumns => _gridColumns;
+  bool get busy => _busy;
 
   Future init() async {
     _dir = await getApplicationDocumentsDirectory();
@@ -106,11 +108,15 @@ class LudiaLogic extends ChangeNotifier {
   }
 
   Future setWallpaper(LudiaItem item, LudiaTarget target) async {
+    _busy = true;
+    notifyListeners();
     if (item.imagePath != null) {
       await AsyncWallpaper.setWallpaperFromFile(
         filePath: item.imagePath!,
         wallpaperLocation: target.index + 1,
       );
     }
+    _busy = false;
+    notifyListeners();
   }
 }

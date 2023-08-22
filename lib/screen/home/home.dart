@@ -42,7 +42,16 @@ class _HomePageState extends State<HomePage> {
   // Scaffold Body
   //
   Widget _buildBody() {
-    return const ItemGridView();
+    final isBusy = context.watch<LudiaLogic>().busy;
+    return Stack(children: [
+      isBusy
+          ? const Center(
+              child: SizedBox(
+                  width: 20, height: 20, child: CircularProgressIndicator()),
+            )
+          : Container(),
+      const ItemGridView(),
+    ]);
   }
 
   //
