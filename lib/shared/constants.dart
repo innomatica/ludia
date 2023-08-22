@@ -1,7 +1,7 @@
 // app info
 const appId = 'com.innomatic.ludiaapp';
 const appName = 'Ludia';
-const appVersion = '1.1.0+5';
+const appVersion = '1.1.1+6';
 const emailDeveloper = 'nuntium.ubique@gmail.com';
 const urlGooglePlay = 'https://play.google.com/store/apps/details?id=$appId';
 const urlAppStore = null;
